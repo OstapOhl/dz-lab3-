@@ -1,39 +1,51 @@
 #include<stdio.h>
-#include<iostream>
-#include<math.h>
-#include <vector>
 
-
-void func(int from, int to, int arr[])
+void func(int from, int to, int funcArr[]).  //func to sort
 {
     int ARR[100];
     int checkArr[] = {5, 15, 25, 35, 45, 50, 55, 65, 75, 85, 95};
-    int h = 0;
+    int h = 0;   //variable of checkArr
     int size = 0;
     
-    
     for(int i = from; i <= to; i++) {
-        arr[i] = i;
+        funcArr[i] = i;
     };
 
-    
     for (int i = from; i <= to; i++)
     {
-            
-        
-        if( arr[i] == checkArr[h] )
+        if( funcArr[i] == checkArr[h] )
         {
             h++;
-            arr[i] = 0;
+            funcArr[i] = 0;
     
         }
-//        else
-            ARR[i] = arr[i];
+            ARR[i] = funcArr[i];
                        
                        printf("%d", ARR[i]);
                        printf("\n");
                        size++;
         };
+    
+    printf("Size:");
+    printf("%d", size);
+    printf("\n");
+    };
+
+int main()
+{
+    int From;
+    int To;
+    int Arr[100];
+
+    printf("Enter interval(1 - 100)\n");
+    printf("From:");
+    scanf("%d", &From);
+
+    printf("to:");
+    scanf("%d", &To);
+
+    func( From, To, Arr );
+}
     
     
     printf("Size:");
